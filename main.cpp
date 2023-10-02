@@ -26,7 +26,7 @@ int main() {
 	//	回数取得用
 	int count = 0;
 
-	printf("%d時間後に再帰的な賃金体系が勝った\n", ComparisonFunction(1072, 100, count));
+	printf("%d時間後に再帰的な賃金体系が儲かった\n", ComparisonFunction(1072, 100, count));
 	
 	return 0;
 }
