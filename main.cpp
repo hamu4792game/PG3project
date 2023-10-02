@@ -7,7 +7,7 @@ T add(T a, T b) {
 template <>
 char add<char>(char a, char b) {
 	printf("数字以外は代入できません\n");
-	return '\n';
+	return '\0';
 }
 
 int main() {
