@@ -1,21 +1,32 @@
 ﻿#include<stdio.h>
 
-template <typename T>
-T add(T a, T b) {
-	return a < b ? b : a;
-}
-template <>
-char add<char>(char a, char b) {
-	printf("数字以外は代入できません\n");
-	return '\0';
+/// <summary>
+/// 比較関数
+/// </summary>
+/// <param name="normal">通常時給</param>
+/// <param name="recursive">再帰的な時給/param>
+/// <param name="count">回数取得用変数/param>
+/// <returns></returns>
+int ComparisonFunction(int normal, int recursive, int count) {
+	count++;
+	int resultN = normal * count;
+	int resultR = (recursive * 2 - 50);
+
+	if (resultN > resultR) {
+		return ComparisonFunction(normal, resultR, count);
+	}
+	return count;
 }
 
 int main() {
+	//	基本時給
+	int normal = 1072;
+	//	再帰的な初期時給
+	int recursive = 100;
+	//	回数取得用
+	int count = 0;
 
-	printf("%d\n", add<int>(114, 51));
-	printf("%f\n", add<float>(114.0f, 51.4f));
-	printf("%lf\n", add<double>(114.0, 51.4));
-	printf("%c\n", add<char>(static_cast<char>('114'), static_cast <char>('514')));
-
+	printf("%d時間後に再帰的な賃金体系が勝った\n", ComparisonFunction(1072, 100, count));
+	
 	return 0;
 }
