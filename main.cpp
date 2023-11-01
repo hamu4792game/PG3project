@@ -22,9 +22,9 @@ int main() {
 	Comparison<int, int> num1(1, 2);
 	Comparison<float, float> num2(1.1f, 2.2f);
 	Comparison<double, double> num3(1.1, 2.2);
-	Comparison<int, float> num4(1, 0.1f);
-	Comparison<int, double> num5(2, 1.1);
-	Comparison<float, double> num6(1.0f, 0.1);
+	Comparison<int, float> num4(1, 2.1f);
+	Comparison<int, double> num5(1, 2.1);
+	Comparison<float, double> num6(1.0f, 2.1);
 
 	std::wcout << num1.Min() << std::endl;
 	std::wcout << num2.Min() << std::endl;
