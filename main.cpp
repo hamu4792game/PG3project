@@ -1,31 +1,24 @@
 ﻿#include <iostream>
-#include "Vehicle.h"
-#include "Car.h"
-#include "Bicycle.h"
+#include "IShape/Rectangle/Rectangle.h"
+#include "IShape/Circle/Circle.h"
+#include "IShape/IShape.h"
 
 int main() {
 
-	Vehicle* vehicle[2];
+	IShape* iShape[2];
 
 	// 生成
-	for (int i = 0; i < 2; i++) {
-		if (i == 0) {
-			vehicle[i] = new Car();
-		}
-		else {
-			vehicle[i] = new Bicycle();
-		}
-	}
-	std::wcout << std::endl;
+	iShape[0] = new Circle(5.0f);
+	iShape[1] = new Rectangle(2.0f, 5.0f);
 
-	// 音を鳴らす
-	for (auto& i : vehicle) {
-		i->Played();
+	// 面積を計算して描画
+	for (auto& i : iShape) {
+		i->Size();
+		i->Draw();
 	}
-	std::wcout << std::endl;
 
 	// 削除
-	for (auto& i : vehicle) {
+	for (auto& i : iShape) {
 		delete i;
 	}
 

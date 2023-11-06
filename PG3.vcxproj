@@ -116,6 +116,7 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
+      <LanguageStandard>stdcpp20</LanguageStandard>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -130,6 +131,7 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
+      <LanguageStandard>stdcpp20</LanguageStandard>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -139,15 +141,14 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="Bicycle.cpp" />
-    <ClCompile Include="Car.cpp" />
+    <ClCompile Include="IShape\Circle\Circle.cpp" />
+    <ClCompile Include="IShape\Rectangle\Rectangle.cpp" />
     <ClCompile Include="main.cpp" />
-    <ClCompile Include="Vehicle.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Bicycle.h" />
-    <ClInclude Include="Car.h" />
-    <ClInclude Include="Vehicle.h" />
+    <ClInclude Include="IShape\Circle\Circle.h" />
+    <ClInclude Include="IShape\IShape.h" />
+    <ClInclude Include="IShape\Rectangle\Rectangle.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
