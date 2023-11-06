@@ -1,11 +1,7 @@
 #pragma once
-#include "Car.h"
-class Bicycle : public Car {
+#include "Vehicle.h"
+class Bicycle : public Vehicle {
 public:
 	Bicycle();
-	~Bicycle() override;
-
-public:
-	void Played() override;
 };
 

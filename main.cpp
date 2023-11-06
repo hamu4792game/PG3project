@@ -1,25 +1,31 @@
-﻿#include<stdio.h>
+﻿#include <iostream>
+#include "Vehicle.h"
 #include "Car.h"
 #include "Bicycle.h"
 
 int main() {
 
-	Car* car[2];
+	Vehicle* vehicle[2];
 
+	// 生成
 	for (int i = 0; i < 2; i++) {
 		if (i == 0) {
-			car[i] = new Car;
+			vehicle[i] = new Car();
 		}
 		else {
-			car[i] = new Bicycle;
+			vehicle[i] = new Bicycle();
 		}
 	}
+	std::wcout << std::endl;
 
-	for (auto& i : car) {
+	// 音を鳴らす
+	for (auto& i : vehicle) {
 		i->Played();
 	}
+	std::wcout << std::endl;
 
-	for (auto& i : car) {
+	// 削除
+	for (auto& i : vehicle) {
 		delete i;
 	}
 
