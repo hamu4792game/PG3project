@@ -11,9 +11,12 @@ int main() {
 	iShape[0] = new Circle(5.0f);
 	iShape[1] = new Rectangle(2.0f, 5.0f);
 
-	// 面積を計算して描画
+	// 計算処理
 	for (auto& i : iShape) {
 		i->Size();
+	}
+	// 描画処理
+	for (auto& i : iShape) {
 		i->Draw();
 	}
 
