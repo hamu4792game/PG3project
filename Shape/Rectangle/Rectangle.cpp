@@ -16,5 +16,5 @@ void Rectangle::Size() {
 }
 
 void Rectangle::Draw() {
-	std::wcout << "–ÊÏ = " << area_ << std::endl;
+	std::wcout << "é¢ç© = " << area_ << std::endl;
 }

@@ -7,11 +7,11 @@ public:
 	Rectangle(const float& width, const float& height);
 	~Rectangle();
 
-public: // ƒƒ“ƒoŠÖ”
+public: // ãƒ¡ãƒ³ãƒé–¢æ•°
 	void Size() override;
 	void Draw() override;
 
-private: // ƒƒ“ƒo•Ï”
+private: // ãƒ¡ãƒ³ãƒå¤‰æ•°
 	float width_ = 0.0f;
 	float height_ = 0.0f;
 

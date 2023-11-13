@@ -6,14 +6,14 @@ public:
 	IShape() = default;
 	~IShape() = default;
 
-protected: // ƒƒ“ƒo•Ï”
-	// –ÊÏ
+protected: // ãƒ¡ãƒ³ãƒå¤‰æ•°
+	// é¢ç©
 	float area_;
 
-public: // ƒƒ“ƒoŠÖ”
-	// –ÊÏ‚ğ‹‚ß‚é
+public: // ãƒ¡ãƒ³ãƒé–¢æ•°
+	// é¢ç©ã‚’æ±‚ã‚ã‚‹
 	virtual void Size() = 0;
-	// ’l‚ğ•\¦‚·‚é
+	// å€¤ã‚’è¡¨ç¤ºã™ã‚‹
 	virtual void Draw() = 0;
 
 };

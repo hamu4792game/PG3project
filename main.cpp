@@ -1,7 +1,7 @@
-﻿#include <iostream>
-#include "IShape/Rectangle/Rectangle.h"
-#include "IShape/Circle/Circle.h"
-#include "IShape/IShape.h"
+#include <iostream>
+#include "Shape/Rectangle/Rectangle.h"
+#include "Shape/Circle/Circle.h"
+#include "Shape/IShape.h"
 
 int main() {
 
