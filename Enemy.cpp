@@ -1,11 +1,11 @@
 #include "Enemy.h"
 #include <iostream>
 
-//	ŠÖ”ƒe[ƒuƒ‹
+//	é–¢æ•°ãƒ†ãƒ¼ãƒ–ãƒ«
 void (Enemy::*Enemy::spFuncTable[])() = {
-	&Enemy::ShortDistanceAttack, // ‹ß‹——£UŒ‚
-	&Enemy::LongDistanceAttack,	 // ‰“‹——£UŒ‚:ËŒ‚
-	&Enemy::WithDrawal,			 // —£’E
+	&Enemy::ShortDistanceAttack, // è¿‘è·é›¢æ”»æ’ƒ
+	&Enemy::LongDistanceAttack,	 // é è·é›¢æ”»æ’ƒ:å°„æ’ƒ
+	&Enemy::WithDrawal,			 // é›¢è„±
 };
 
 Enemy::Enemy() {
@@ -14,10 +14,10 @@ Enemy::Enemy() {
 }
 
 void Enemy::Update() {
-	//	ƒƒ“ƒoŠÖ”ƒ|ƒCƒ“ƒ^‚É“ü‚Á‚Ä‚¢‚éŒ»İ‚Ìó‘Ô‚ÌŠÖ”‚ğŒÄ‚Ño‚·
+	//	ãƒ¡ãƒ³ãƒé–¢æ•°ãƒã‚¤ãƒ³ã‚¿ã«å…¥ã£ã¦ã„ã‚‹ç¾åœ¨ã®çŠ¶æ…‹ã®é–¢æ•°ã‚’å‘¼ã³å‡ºã™
 	(this->*spFuncTable[static_cast<size_t>(phase_)])();
 
-	/*//	ƒtƒF[ƒY‚Ì‰ÁZ
+	/*//	ãƒ•ã‚§ãƒ¼ã‚ºã®åŠ ç®—
 	auto handle = static_cast<size_t>(phase_);
 	handle++;
 	phase_ = static_cast<State>(handle);*/
@@ -25,16 +25,16 @@ void Enemy::Update() {
 }
 
 void Enemy::ShortDistanceAttack() {
-	std::wcout << "Œ»İ‚Ìó‘ÔF‹ßÚ" << std::endl;
+	std::wcout << "ç¾åœ¨ã®çŠ¶æ…‹ï¼šè¿‘æ¥" << std::endl;
 	phase_ = State::LongDistanceAttack;
 }
 
 void Enemy::LongDistanceAttack() {
-	std::wcout << "Œ»İ‚Ìó‘ÔFËŒ‚" << std::endl;
+	std::wcout << "ç¾åœ¨ã®çŠ¶æ…‹ï¼šå°„æ’ƒ" << std::endl;
 	phase_ = State::WithDrawal;
 }
 
 void Enemy::WithDrawal() {
-	std::wcout << "Œ»İ‚Ìó‘ÔF—£’E" << std::endl;
+	std::wcout << "ç¾åœ¨ã®çŠ¶æ…‹ï¼šé›¢è„±" << std::endl;
 	isDead_ = true;
 }

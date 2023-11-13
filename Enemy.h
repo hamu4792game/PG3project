@@ -4,10 +4,10 @@ class Enemy {
 public:
 	Enemy();
 	~Enemy() = default;
-	//	XVˆ—
+	//	æ›´æ–°å‡¦ç†
 	void Update();
 
-private: // ƒƒ“ƒo•Ï”
+private: // ãƒ¡ãƒ³ãƒå¤‰æ•°
 	enum class State {
 		ShortDistanceAttack,
 		LongDistanceAttack,
@@ -17,16 +17,16 @@ private: // ƒƒ“ƒo•Ï”
 
 	bool isDead_ = false;
 
-public: // ©ìƒƒ“ƒoŠÖ”
-	void ShortDistanceAttack(); // ‹ß‹——£UŒ‚
-	void LongDistanceAttack();	// ‰“‹——£UŒ‚:ËŒ‚
-	void WithDrawal();			// —£’E
+public: // è‡ªä½œãƒ¡ãƒ³ãƒé–¢æ•°
+	void ShortDistanceAttack(); // è¿‘è·é›¢æ”»æ’ƒ
+	void LongDistanceAttack();	// é è·é›¢æ”»æ’ƒ:å°„æ’ƒ
+	void WithDrawal();			// é›¢è„±
 
 private:
-	//	ƒƒ“ƒoŠÖ”ƒ|ƒCƒ“ƒ^‚Ìƒe[ƒuƒ‹
+	//	ãƒ¡ãƒ³ãƒé–¢æ•°ãƒã‚¤ãƒ³ã‚¿ã®ãƒ†ãƒ¼ãƒ–ãƒ«
 	static void (Enemy::* spFuncTable[])();
 
-public: // ƒQƒbƒ^[
+public: // ã‚²ãƒƒã‚¿ãƒ¼
 	bool GetDeadFlag() { return isDead_; }
 
 };
