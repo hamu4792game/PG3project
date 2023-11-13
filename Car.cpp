@@ -2,7 +2,7 @@
 #include <iostream>
 
 Car::Car() {
-	name_ = "Ô";
-	warningSound_ = "ƒvƒbƒv[";
-	std::wcout << name_ << "‚ªŒ©‚¦‚½" << std::endl;
+	name_ = "è»Š";
+	warningSound_ = "ãƒ—ãƒƒãƒ—ãƒ¼";
+	std::wcout << name_ << "ãŒè¦‹ãˆãŸ" << std::endl;
 }

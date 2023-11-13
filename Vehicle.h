@@ -2,13 +2,13 @@
 
 class Vehicle {
 public:
-	// ƒRƒ“ƒXƒgƒ‰ƒNƒ^
+	// ã‚³ãƒ³ã‚¹ãƒˆãƒ©ã‚¯ã‚¿
 	Vehicle();
-	// ƒfƒXƒgƒ‰ƒNƒ^
+	// ãƒ‡ã‚¹ãƒˆãƒ©ã‚¯ã‚¿
 	virtual ~Vehicle();
 
 public:
-	// ‰¹‚ð–Â‚ç‚µ‚½
+	// éŸ³ã‚’é³´ã‚‰ã—ãŸ
 	virtual void Played();
 
 protected:

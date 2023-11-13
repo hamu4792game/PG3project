@@ -1,4 +1,4 @@
-﻿#include <iostream>
+#include <iostream>
 #include "Vehicle.h"
 #include "Car.h"
 #include "Bicycle.h"

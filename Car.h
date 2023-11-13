@@ -3,7 +3,7 @@
 
 class Car : public Vehicle {
 public:
-	// コンストラクタ
+	// 繧ｳ繝ｳ繧ｹ繝医Λ繧ｯ繧ｿ
 	Car();
 };
 

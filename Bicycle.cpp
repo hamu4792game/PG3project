@@ -2,7 +2,7 @@
 #include <iostream>
 
 Bicycle::Bicycle() {
-	name_ = "Ž©“]ŽÔ";
-	warningSound_ = "ƒ`ƒƒƒŠƒ“ƒ`ƒƒƒŠƒ“";
-	std::wcout << name_ << "‚ªŒ©‚¦‚½" << std::endl;
+	name_ = "è‡ªè»¢è»Š";
+	warningSound_ = "ãƒãƒ£ãƒªãƒ³ãƒãƒ£ãƒªãƒ³";
+	std::wcout << name_ << "ãŒè¦‹ãˆãŸ" << std::endl;
 }

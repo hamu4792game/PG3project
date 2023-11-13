@@ -7,9 +7,9 @@ Vehicle::Vehicle() {
 }
 
 Vehicle::~Vehicle() {
-	std::wcout << name_ << "‚Í’Ê‚è‰ß‚¬‚Ä‚¢‚Á‚½" << std::endl;
+	std::wcout << name_ << "ã¯é€šã‚ŠéŽãŽã¦ã„ã£ãŸ" << std::endl;
 }
 
 void Vehicle::Played() {
-	std::wcout << "Œx‰¹ : " << warningSound_ << std::endl;
+	std::wcout << "è­¦å‘ŠéŸ³ : " << warningSound_ << std::endl;
 }
