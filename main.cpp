@@ -21,7 +21,19 @@ int RandNum(int min, int max) {
 	return static_cast<int>(dist(randNum));
 }
 
-
+bool SetTimeOut(std::function<bool(void)>func, const uint16_t& count) {
+	uint16_t result = count;
+	do {
+		// 結果までのカウント描画
+		std::wcout << "結果まであと" << result << "秒" << std::endl;
+		// 1秒待つ
+		std::this_thread::sleep_for(std::chrono::seconds(1));
+		//	時間を減らした値を返す
+		result -= 1u;
+	} while (result > 0u);
+	
+	return func();
+}
 
 int main() {
 
@@ -45,34 +57,28 @@ int main() {
 		};
 
 		//	true = 奇数　：　false = 偶数
-		int flag = InputComparison();
+		int answerFlag = InputComparison();
 		//	例外処理
-		if (flag == -1) {
+		if (answerFlag == -1) {
 			continue;
 		}
-
 		uint16_t count = 3u;
-		// 焦らしラムダ関数 void型 引数(int s = 現在の時間)
-		std::function<void(int)> SetTimeOut = [](int s) {std::wcout << "結果まであと" << s << "秒" << std::endl; };
 
-		do {
-			// 結果までのカウント描画
-			SetTimeOut(count);
-			// 1秒待つ
-			std::this_thread::sleep_for(std::chrono::seconds(1));
-			//	時間を減らす
-			count -= 1u;
-		} while (count > 0u);
-		
-		//	指定範囲でランダム値の取得
-		uint32_t result = RandNum(2, 12);
-		std::wcout << "抽選結果：" << result << std::endl;
-		//	true = 奇数　：　false = 偶数
-		bool resultFlag = false;
-		result % 2 == 0 ? resultFlag = false : resultFlag = true;
+		std::function<bool(void)> resultAnnouncement = []() {
+			//	指定範囲でランダム値の取得
+			uint32_t result = RandNum(2, 12);
+			std::wcout << "抽選結果：" << result << std::endl;
+			//	true = 奇数　：　false = 偶数
+			if (result % 2 == 0) {
+				return false;
+			}
+			return true;
+		};
+
+		bool resultFlag = SetTimeOut(resultAnnouncement, count);
 
 		//	結果
-		if (flag == resultFlag) {
+		if (answerFlag == resultFlag) {
 			std::wcout << "正解です" << std::endl;
 		}
 		else {
