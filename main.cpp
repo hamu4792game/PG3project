@@ -4,6 +4,7 @@
 
 int main() {
 	
+	std::cout << "100.000文字を移動とコピーで比較しました" << std::endl;
 	std::string text(100000, 'a');
 
 	std::chrono::steady_clock::time_point now = std::chrono::steady_clock::now();
@@ -14,7 +15,7 @@ int main() {
 	auto time = end - now;
 
 	auto msec = std::chrono::duration_cast<std::chrono::microseconds>(time);
-	std::cout << msec << std::endl;
+	std::cout << "コピー : " << msec << std::endl;
 
 
 	now = std::chrono::steady_clock::now();
@@ -24,7 +25,7 @@ int main() {
 
 	time = end - now;
 	msec = std::chrono::duration_cast<std::chrono::microseconds>(time);
-	std::cout << msec << std::endl;
+	std::cout << "移動 : " << msec << std::endl;
 
 
 
